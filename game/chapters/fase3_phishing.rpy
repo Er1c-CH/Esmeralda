@@ -23,7 +23,7 @@ label fase3_phishing:
 label inbox_phishing:
 
     while emails_analisados < 3:
-
+        
         call screen email_inbox
 
     jump fase3_resultado

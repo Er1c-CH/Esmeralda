@@ -32,6 +32,8 @@ label fase3_login:
 
     if not login_ok:
 
+        $ tentativas_login = 3
+
         scene black
 
         centered "ACESSO BLOQUEADO"
