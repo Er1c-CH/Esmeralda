@@ -1,9 +1,18 @@
 label tutorial:
 
-    "Bem-vindo ao tutorial."
+    scene bg quarto
 
-    "Fim do tutorial."
+    show esmeralda feliz at centro
 
-    $ fase1_liberada = True
+    e "Hoje é meu primeiro dia de aula."
+
+    scene bg sala_aula
+
+    show professor feliz at esquerda
+    show esmeralda feliz at direita
+
+    p "Bom dia, turma!"
+
+    e "Bom dia, professor!"
 
     jump chapter_menu
