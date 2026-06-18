@@ -55,11 +55,11 @@ image professor raiva = Transform(
 # ==================================================
 
 image npc1 = Transform(
-    "images/npc 1.png",
+    "images/npc 2.png",
     zoom=0.40
 )
 
 image npc2 = Transform(
-    "images/npc 2.png",
+    "images/npc 1.png",
     zoom=0.40
 )

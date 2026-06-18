@@ -46,5 +46,6 @@ label fase1:
         pause 2.0
 
         $ fase2_liberada = True
+        $ senha_cadastrada = senha_digitada
 
         jump chapter_menu

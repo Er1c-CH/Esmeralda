@@ -1722,3 +1722,35 @@ screen senha_minigame():
 
             textbutton "Criar Conta":
                 action Return(True)
+
+
+screen email_inbox():
+
+    modal True
+
+    frame:
+
+        xalign 0.5
+        yalign 0.5
+        padding (30, 20)
+
+        has vbox
+        spacing 15
+
+        text "SkyEmail - Caixa de Entrada" size 32
+
+        text "E-mails analisados: [emails_analisados]/3"
+
+        textbutton "📧 Banco Central - Conta bloqueada":
+            action Jump("email1")
+
+        textbutton "📧 Escola - Atualização de notas":
+            action Jump("email2")
+
+        textbutton "📧 Suporte SkyEmail - Verificação de conta":
+            action Jump("email3")
+
+        if emails_analisados >= 3:
+
+            textbutton "Finalizar análise":
+                action Return()
