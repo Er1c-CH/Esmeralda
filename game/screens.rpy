@@ -1655,3 +1655,70 @@ screen chapter_select():
             else:
                 textbutton "Fase 3 (Bloqueada)":
                     action NullAction()
+
+
+screen senha_minigame():
+
+    modal True
+
+    $ criterios, pontos, nivel = analisar_senha(senha_digitada)
+
+    frame:
+
+        xalign 0.5
+        yalign 0.5
+
+        has vbox
+
+        spacing 15
+
+        text "Crie uma senha para sua conta SkyMail" size 32
+
+        input:
+            value VariableInputValue("senha_digitada")
+            length 32
+
+        text "Força da senha: [nivel]"
+
+        if nivel == "Fraca":
+            bar value StaticValue(25) range 100
+
+        elif nivel == "Média":
+            bar value StaticValue(60) range 100
+
+        else:
+            bar value StaticValue(100) range 100
+
+        text ""
+
+        if criterios["tamanho"]:
+            text "✓ Pelo menos 8 caracteres"
+        else:
+            text "✗ Pelo menos 8 caracteres"
+
+        if criterios["minuscula"]:
+            text "✓ Letra minúscula"
+        else:
+            text "✗ Letra minúscula"
+
+        if criterios["maiuscula"]:
+            text "✓ Letra maiúscula"
+        else:
+            text "✗ Letra maiúscula"
+
+        if criterios["numero"]:
+            text "✓ Número"
+        else:
+            text "✗ Número"
+
+        if criterios["especial"]:
+            text "✓ Caractere especial"
+        else:
+            text "✗ Caractere especial"
+
+        text ""
+
+        if pontos == 5:
+
+            textbutton "Criar Conta":
+                action Return(True)
