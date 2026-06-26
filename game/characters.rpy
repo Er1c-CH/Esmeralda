@@ -16,17 +16,17 @@ define narrador = Character(None)
 
 image esmeralda feliz = Transform(
     "images/protagonista feliz.png",
-    zoom=0.40
+    zoom=0.35
 )
 
 image esmeralda triste = Transform(
     "images/protagonista triste.png",
-    zoom=0.40
+    zoom=0.35
 )
 
 image esmeralda raiva = Transform(
     "images/protagonista raiva.png",
-    zoom=0.40
+    zoom=0.35
 )
 
 
@@ -36,17 +36,17 @@ image esmeralda raiva = Transform(
 
 image professor feliz = Transform(
     "images/professor feliz.png",
-    zoom=0.40
+    zoom=0.45
 )
 
 image professor triste = Transform(
     "images/professor triste.png",
-    zoom=0.40
+    zoom=0.45
 )
 
 image professor raiva = Transform(
     "images/professor raiva.png",
-    zoom=0.40
+    zoom=0.45
 )
 
 
@@ -56,10 +56,10 @@ image professor raiva = Transform(
 
 image npc1 = Transform(
     "images/npc 2.png",
-    zoom=0.40
+    zoom=0.35
 )
 
 image npc2 = Transform(
     "images/npc 1.png",
-    zoom=0.40
+    zoom=0.35
 )

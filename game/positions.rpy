@@ -5,6 +5,7 @@
 transform esquerda:
     xalign 0.20
     yalign 1.0
+    xzoom -1
 
 transform centro:
     xalign 0.50
