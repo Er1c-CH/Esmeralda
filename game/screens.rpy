@@ -354,6 +354,8 @@ screen main_menu():
     ## Isso garante que qualquer outra tela de menu seja substituída.
     tag menu
 
+    add Transform("images/tela.png", size=(1280, 720))
+
     add gui.main_menu_background
 
     ## Esse quadro vazio escurece o menu principal.
@@ -374,6 +376,61 @@ screen main_menu():
 
             text "[config.version]":
                 style "main_menu_version"
+
+screen main_menu():
+
+    tag menu
+
+    add Transform(
+        "images/tela.png",
+        size=(1280, 720)
+    )
+
+    vbox:
+
+        xalign 0.08
+        yalign 0.60
+        spacing 20
+
+        textbutton "Jogar":
+            text_size 40
+            text_bold True
+            text_color "#FFFFFF"
+            text_hover_color "#FFD54A"
+            text_outlines [(2, "#000000", 0, 0)]
+            action Start()
+
+        textbutton "Carregar":
+            text_size 40
+            text_bold True
+            text_color "#FFFFFF"
+            text_hover_color "#FFD54A"
+            text_outlines [(2, "#000000", 0, 0)]
+            action ShowMenu("load")
+
+        textbutton "Preferências":
+            text_size 40
+            text_bold True
+            text_color "#FFFFFF"
+            text_hover_color "#FFD54A"
+            text_outlines [(2, "#000000", 0, 0)]
+            action ShowMenu("preferences")
+
+        textbutton "Créditos":
+            text_size 40
+            text_bold True
+            text_color "#FFFFFF"
+            text_hover_color "#FFD54A"
+            text_outlines [(2, "#000000", 0, 0)]
+            action ShowMenu("about")
+
+        textbutton "Sair":
+            text_size 40
+            text_bold True
+            text_color "#FFFFFF"
+            text_hover_color "#FFD54A"
+            text_outlines [(2, "#000000", 0, 0)]
+            action Quit(confirm=True)
 
 
 style main_menu_frame is empty

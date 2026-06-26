@@ -18,7 +18,7 @@ screen chapter_select():
 
     tag menu
 
-    add Solid("#1f2430")
+    add Solid("#fff3ff")
 
     frame:
         background None
