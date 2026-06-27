@@ -389,10 +389,10 @@ screen main_menu():
     vbox:
 
         xalign 0.08
-        yalign 0.60
-        spacing 20
+        yalign 0.82
+        spacing 10
 
-        textbutton "Jogar":
+        textbutton "▶ Jogar":
             text_size 40
             text_bold True
             text_color "#FFFFFF"
@@ -400,7 +400,7 @@ screen main_menu():
             text_outlines [(2, "#000000", 0, 0)]
             action Start()
 
-        textbutton "Carregar":
+        textbutton "💾 Carregar":
             text_size 40
             text_bold True
             text_color "#FFFFFF"
@@ -408,7 +408,7 @@ screen main_menu():
             text_outlines [(2, "#000000", 0, 0)]
             action ShowMenu("load")
 
-        textbutton "Preferências":
+        textbutton "⚙ Preferências":
             text_size 40
             text_bold True
             text_color "#FFFFFF"
@@ -416,7 +416,7 @@ screen main_menu():
             text_outlines [(2, "#000000", 0, 0)]
             action ShowMenu("preferences")
 
-        textbutton "Créditos":
+        textbutton "📜 Créditos":
             text_size 40
             text_bold True
             text_color "#FFFFFF"
@@ -424,7 +424,7 @@ screen main_menu():
             text_outlines [(2, "#000000", 0, 0)]
             action ShowMenu("about")
 
-        textbutton "Sair":
+        textbutton "🚪 Sair":
             text_size 40
             text_bold True
             text_color "#FFFFFF"
