@@ -4,16 +4,39 @@ label fase3:
 
     show esmeralda feliz at centro
 
-    e "Hoje preciso resolver algumas pendências no SkyMail."
+    e "Hoje é o dia da avaliação prática de segurança digital..."
 
-    e "Espero lembrar da senha..."
+    e "O professor disse que tudo vai acontecer dentro do SkyMail."
+
+    e "Preciso me concentrar."
 
     hide esmeralda feliz
 
     scene black with fade
 
-    "Conectando ao SkyMail..."
+    # ==================================================
+    # NARRADOR - INSTRUÇÕES DA PROVA
+    # ==================================================
 
-    pause 1.0
+    "SISTEMA SKYMAIL - AVALIAÇÃO PRÁTICA INICIADA"
+
+    "Você foi conectada ao ambiente de testes do SkyMail."
+
+    "OBJETIVO:"
+    "Analisar mensagens recebidas e identificar possíveis tentativas de phishing."
+
+    "INSTRUÇÕES:"
+    "• Clique nos e-mails para abrir e inspecionar o conteúdo"
+    "• Procure sinais suspeitos como links, urgência ou remetentes estranhos"
+    "• Classifique cada mensagem ao final da análise"
+
+    "DICA IMPORTANTE:"
+    "Você pode usar o scroll do mouse para ler o conteúdo completo dos e-mails."
+
+    pause 2.0
+
+    "Carregando caixa de entrada..."
+
+    pause 1.5
 
     jump fase3_login

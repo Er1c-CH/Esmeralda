@@ -11,7 +11,7 @@ label fase3_resultado:
     elif phishing_score == 1:
 
         centered "BOM TRABALHO"
-        centered "Você cometeu um pequeno erro."
+        centered "Você cometeu poucos erros."
 
     elif phishing_score == 2:
 
@@ -25,9 +25,25 @@ label fase3_resultado:
 
     pause 2.0
 
-    centered "JOGO CONCLUÍDO"
+    centered "FIM DA AVALIAÇÃO ONLINE"
+    pause 1.5
 
-    return
+    centered "NO DIA SEGUINTE..."
+    pause 2.0
+
+    scene bg quarto with fade
+
+    show esmeralda feliz at centro
+
+    e "Acho que terminei a prova de ontem..."
+
+    e "Espero ter ido bem."
+
+    hide esmeralda feliz
+
+    scene black with fade
+
+    jump avaliacao_professor
 
 ############################################################
 ##

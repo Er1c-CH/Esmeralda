@@ -15,7 +15,8 @@ screen chapter_select():
 
     tag menu
 
-    add Solid("#fff3ff")
+    add "images/tela.png"
+    add Solid("#ffffffa2")
 
     frame:
         background None
@@ -88,7 +89,7 @@ screen chapter_select():
                                 ypos=68
                             )
 
-                    text "Fase 1" xalign 0.5
+                    text "Senhas fortes" xalign 0.5
 
                 #################################
                 # FASE 2
@@ -131,7 +132,7 @@ screen chapter_select():
                                 ypos=68
                             )
 
-                    text "Fase 2" xalign 0.5
+                    text "Engenharia Social" xalign 0.5
 
                 #################################
                 # FASE 3
@@ -174,7 +175,7 @@ screen chapter_select():
                                 ypos=68
                             )
 
-                    text "Fase 3" xalign 0.5
+                    text "Phishing" xalign 0.5
 
             null height 15
 
