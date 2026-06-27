@@ -7,3 +7,4 @@ default senha_cadastrada = ""
 
 default mostrar_dicas = False
 default senha_concluida = False
+
