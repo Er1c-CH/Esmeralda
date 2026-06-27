@@ -10,9 +10,11 @@ label tutorial:
 
     e "Mais um dia começando..."
 
-    e "Hoje parece que vai ser diferente. O professor comentou que teríamos uma aula especial sobre segurança digital."
+    e "Hoje vai ser diferente. O professor comentou que teremos uma avaliação prática sobre segurança digital."
 
-    e "Melhor eu me arrumar logo para não perder o ônibus."
+    e "Uma prova... mas não no papel. Na internet."
+
+    e "Melhor eu me preparar."
 
     e "Uso meu celular, computador e redes sociais todos os dias..."
 
@@ -36,32 +38,26 @@ label tutorial:
 
     a1 "Bom dia, Esmeralda!"
 
-    e "Bom dia! Sobre o que vocês estavam falando?"
+    e "Bom dia! Prova hoje, né?"
 
-    a2 "Você viu a mensagem que circulou no grupo da turma ontem?"
+    a2 "Sim... disseram que vai ser uma prova diferente. Mais prática."
 
-    a1 "Pois é. Tinha um link prometendo ingressos grátis para um show."
+    a1 "Sobre internet, senhas e essas coisas."
 
-    e "E alguém clicou?"
+    e "Então não é só teoria..."
 
-    a1 "Algumas pessoas sim. Depois descobriram que era falso."
-
-    a2 "Hoje em dia é difícil saber o que é confiável na internet."
-
-    e "Ainda bem que a aula de hoje vai falar justamente sobre isso."
+    a2 "Parece que vamos ser testados de verdade."
 
     "O sinal toca."
 
-    a1 "Vamos para a sala!"
-
-    a2 "Antes que o professor reclame do atraso."
+    a1 "Vamos logo, antes que o professor comece."
 
     hide npc1
     hide npc2
     hide esmeralda feliz
 
     # ==================================================
-    # CENA 3 - A AULA
+    # CENA 3 - A AVALIAÇÃO DO PROFESSOR
     # ==================================================
 
     scene bg sala_aula
@@ -73,130 +69,121 @@ label tutorial:
 
     "Turma" "Bom dia!"
 
-    p "Hoje vamos aprender algo muito importante: como proteger nossos dados e nossa identidade digital."
+    p "Hoje não teremos uma aula comum."
 
-    p "Todos vocês usam celulares, redes sociais, aplicativos e e-mails diariamente."
+    p "Vocês serão avaliados em uma prova prática de segurança digital."
 
-    p "Mas será que sabem reconhecer os riscos que existem na internet?"
+    p "Essa prova será dividida em três desafios."
 
-    "Os alunos ficam atentos."
+    p "E cada um deles simula situações reais da internet."
 
     # --------------------------
-    # DESAFIO 1
+    # DESAFIO 1 - SENHAS
     # --------------------------
 
-    p "Nosso primeiro desafio será sobre senhas."
+    p "Desafio 1: Senhas seguras."
 
-    p "Muitas pessoas ainda utilizam senhas simples como datas de aniversário, nomes de familiares ou sequências numéricas."
+    p "Vocês deverão criar uma senha forte para uma conta fictícia chamada SkyMail."
 
-    p "Essas senhas podem ser descobertas facilmente."
+    p "Senhas fracas são facilmente descobertas e colocam seus dados em risco."
 
-    p "Vocês precisarão aprender a criar senhas fortes utilizando letras maiúsculas, minúsculas, números e símbolos."
-
-    p "Quanto mais difícil for adivinhar a senha, maior será a proteção das suas contas."
+    p "Uma senha segura deve conter letras maiúsculas, minúsculas, números e símbolos."
 
     show esmeralda triste at direita
 
-    e "Acho que vou precisar revisar algumas das minhas senhas..."
+    e "Então minha senha vai ser testada..."
 
-    # --------------------------
-    # DESAFIO 2
-    # --------------------------
-
+    hide esmeralda triste
     show esmeralda feliz at direita
 
-    p "O segundo desafio será sobre engenharia social."
-
-    a1 "O que é isso, professor?"
-
-    p "É quando alguém tenta manipular você para obter informações pessoais."
-
-    p "Nem todo ataque acontece através de computadores."
-
-    p "Muitas vezes o golpista tenta ganhar sua confiança primeiro."
-
-    p "Vocês precisarão observar comportamentos, analisar situações e decidir em quem confiar."
-
-    p "Uma decisão errada pode expor informações importantes."
-
-    e "Então nem todo perigo vem de programas maliciosos..."
-
     # --------------------------
-    # DESAFIO 3
+    # DESAFIO 2 - ENGENHARIA SOCIAL
     # --------------------------
 
-    p "O terceiro desafio será sobre phishing."
+    p "Desafio 2: Engenharia social."
 
-    a2 "Já ouvi esse nome antes."
+    a1 "Isso é o quê mesmo?"
 
-    p "Phishing é uma tentativa de enganar usuários através de mensagens falsas."
+    p "É quando alguém tenta enganar você para obter informações confidenciais."
 
-    p "Essas mensagens geralmente imitam bancos, lojas, empresas ou serviços conhecidos."
+    p "Não é um ataque direto ao sistema, mas à confiança da pessoa."
 
-    p "Vocês precisarão analisar e-mails, links e mensagens para identificar possíveis fraudes."
+    p "Durante a prova, vocês vão encontrar pessoas tentando obter dados de vocês."
 
-    p "Nem tudo o que parece verdadeiro realmente é."
+    p "Nem todo risco vem de computadores — alguns vêm de conversas."
 
-    p "Antes de clicar em qualquer link, é importante observar os detalhes."
+    e "Então preciso desconfiar até de quem parece confiável..."
+
+    # --------------------------
+    # DESAFIO 3 - PHISHING
+    # --------------------------
+
+    p "Desafio 3: Phishing."
+
+    a2 "Já ouvi falar disso..."
+
+    p "Phishing são mensagens falsas que imitam empresas, bancos ou serviços reais."
+
+    p "O objetivo é enganar vocês para clicar em links ou fornecer dados."
+
+    p "Vocês deverão analisar e-mails e identificar sinais de fraude."
+
+    p "Nem tudo o que parece oficial realmente é."
+
+    p "A atenção aos detalhes será essencial."
 
     show esmeralda triste at direita
 
-    e "Parece mais complicado do que eu imaginava."
+    e "Isso parece o mais difícil de todos..."
 
     # --------------------------
-    # FIM DA AULA
+    # FIM DA AVALIAÇÃO
     # --------------------------
 
     show professor feliz at esquerda
 
-    "O sinal toca anunciando o fim da aula."
+    "O sinal toca."
 
-    p "Por hoje é só."
+    p "A prova começa agora."
 
-    p "Nas próximas atividades vocês colocarão esse conhecimento em prática."
+    p "Lembrem-se: vocês serão avaliados pela capacidade de identificar riscos digitais."
 
-    p "Lembrem-se: proteger seus dados é proteger vocês mesmos."
+    p "Boa sorte."
 
-    "Turma" "Até logo, professor!"
+    "Turma" "Obrigado, professor!"
 
     hide professor feliz
     hide esmeralda triste
 
     # ==================================================
-    # CENA 4 - VOLTA PARA CASA
+    # CENA 4 - PREPARAÇÃO FINAL
     # ==================================================
 
     scene bg sala_casa
 
     show esmeralda feliz at centro
 
-    "Esmeralda chega em casa e coloca sua mochila sobre a mesa."
+    e "Então é isso... uma prova de verdade."
 
-    e "Aprendi bastante coisa hoje."
+    e "Não é só sobre decorar, mas sobre entender o que é seguro ou não."
 
-    e "Nunca tinha parado para pensar que uma senha fraca poderia causar tantos problemas."
+    e "Senhas, pessoas, mensagens..."
 
-    e "Também preciso prestar mais atenção nas pessoas e nas mensagens que recebo."
-
-    e "A internet pode ser muito útil, mas também exige cuidado."
+    e "Tudo pode ser uma armadilha se eu não prestar atenção."
 
     "Ela liga o computador."
 
-    e "Hora de colocar esse conhecimento em prática."
+    e "Hora de começar a avaliação."
 
     hide esmeralda feliz
 
     scene black with fade
 
-    centered "TUTORIAL CONCLUÍDO"
+    centered "AVALIAÇÃO INICIADA"
 
     pause 2.0
 
-    centered "Próxima Etapa"
-
-    pause 1.5
-
-    centered "FASE 1 - CONSTRUINDO SENHAS FORTES"
+    centered "DESAFIO 1 - SENHAS SEGURAS"
 
     pause 2.0
 
