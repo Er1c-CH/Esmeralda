@@ -389,14 +389,14 @@ screen main_menu():
     vbox:
 
         xalign 0.08
-        yalign 0.82
+        yalign 0.92
         spacing 10
 
         textbutton "▶ Jogar":
             text_size 40
             text_bold True
             text_color "#FFFFFF"
-            text_hover_color "#FFD54A"
+            text_hover_color "#66222C"
             text_outlines [(2, "#000000", 0, 0)]
             action Start()
 
@@ -404,7 +404,7 @@ screen main_menu():
             text_size 40
             text_bold True
             text_color "#FFFFFF"
-            text_hover_color "#FFD54A"
+            text_hover_color "#66222C"
             text_outlines [(2, "#000000", 0, 0)]
             action ShowMenu("load")
 
@@ -412,7 +412,7 @@ screen main_menu():
             text_size 40
             text_bold True
             text_color "#FFFFFF"
-            text_hover_color "#FFD54A"
+            text_hover_color "#66222C"
             text_outlines [(2, "#000000", 0, 0)]
             action ShowMenu("preferences")
 
@@ -420,7 +420,7 @@ screen main_menu():
             text_size 40
             text_bold True
             text_color "#FFFFFF"
-            text_hover_color "#FFD54A"
+            text_hover_color "#66222C"
             text_outlines [(2, "#000000", 0, 0)]
             action ShowMenu("about")
 
@@ -428,7 +428,7 @@ screen main_menu():
             text_size 40
             text_bold True
             text_color "#FFFFFF"
-            text_hover_color "#FFD54A"
+            text_hover_color "#66222C"
             text_outlines [(2, "#000000", 0, 0)]
             action Quit(confirm=True)
 
