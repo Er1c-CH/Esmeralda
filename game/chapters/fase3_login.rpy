@@ -27,11 +27,9 @@ label fase3_login:
 
         scene bg tela_computador with fade
 
-        centered "Login realizado com sucesso."
-
         pause 1
 
-        jump fase3_email
+        jump fase3_inbox
 
     scene black with fade
 

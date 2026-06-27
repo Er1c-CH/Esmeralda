@@ -39,30 +39,30 @@ define SKY_WARNING = "#F9AB00"
 
 style sky_title:
     color SKY_TEXT
-    size 30
+    size 25
     bold True
 
 style sky_text:
     color SKY_TEXT
-    size 22
+    size 17
 
 style sky_label:
     color SKY_SUBTEXT
-    size 18
+    size 13
     bold True
 
 style sky_address:
     color "#555555"
-    size 18
+    size 13
 
 style sky_error:
     color SKY_ERROR
-    size 20
+    size 15
     bold True
 
 style sky_success:
     color SKY_SUCCESS
-    size 20
+    size 15
     bold True
 
 style sky_button_text:
@@ -73,7 +73,7 @@ style sky_button_text:
 
     bold True
 
-    size 24
+    size 19
 
 ############################################################
 ## BOTÃO PADRÃO
@@ -107,7 +107,7 @@ transform skymail_window:
 ## COMPONENTE
 ############################################################
 
-screen skymail_window(title="SkyMail"):
+screen skymail_window(title="SkyMail", largura=780, altura=590):
 
     modal True
 
@@ -122,8 +122,8 @@ screen skymail_window(title="SkyMail"):
         xpos 255
         ypos 60
 
-        xsize 790
-        ysize 600
+        xsize largura + 10
+        ysize altura + 10
 
     #########################################
     ## JANELA
@@ -136,8 +136,8 @@ screen skymail_window(title="SkyMail"):
         xpos 250
         ypos 55
 
-        xsize 780
-        ysize 590
+        xsize largura
+        ysize altura
 
         padding (0,0)
 

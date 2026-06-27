@@ -20,10 +20,18 @@ label fase3_phishing:
 
     jump inbox_phishing
 
-label inbox_phishing:
+label fase3_inbox:
 
-    while emails_analisados < 3:
-        
-        call screen email_inbox
+    $ phishing_score = 0
+
+    $ email1_lido = False
+    $ email2_lido = False
+    $ email3_lido = False
+
+    $ email_selecionado = 0
+
+    scene bg tela_computador
+
+    call screen email_inbox
 
     jump fase3_resultado

@@ -4,21 +4,15 @@ label fase3:
 
     show esmeralda feliz at centro
 
-    e "Hoje eu preciso resolver algumas coisas importantes na minha conta SkyEmail..."
+    e "Hoje preciso resolver algumas pendências no SkyMail."
 
-    e "Faz tempo que não acesso meus e-mails."
-
-    e "Espero que eu ainda lembre minha senha..."
+    e "Espero lembrar da senha..."
 
     hide esmeralda feliz
 
     scene black with fade
 
-    "Conectando ao servidor SkyEmail..."
-
-    pause 1.5
-
-    "Verificação de segurança necessária..."
+    "Conectando ao SkyMail..."
 
     pause 1.0
 
