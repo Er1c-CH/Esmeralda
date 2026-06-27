@@ -46,3 +46,9 @@ image bg sala_aula = im.Scale(
     1280,
     720
 )
+
+image bg tela_computador = im.Scale(
+    "images/tela computador.png",
+    1280,
+    720
+)

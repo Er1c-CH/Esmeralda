@@ -1,6 +1,3 @@
-default senha_digitada = ""
-default senha_cadastrada = ""
-default senha_concluida = False
 
 init python:
 

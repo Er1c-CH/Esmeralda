@@ -1,7 +1,4 @@
-﻿default fase1_liberada = False
-default fase2_liberada = False
-default fase3_liberada = False
-
+﻿
 label start:
 
     play music "music/ost1.ogg" fadein 2.0
