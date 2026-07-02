@@ -89,6 +89,8 @@ label fase2:
 
         "Recusar":
 
+            $ vulnerabilidade += 1
+
             e "Prefiro não informar."
 
             p "Tudo bem, mas essa era uma solicitação oficial da escola."

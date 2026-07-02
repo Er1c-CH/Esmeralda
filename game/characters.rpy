@@ -3,9 +3,9 @@
 # ==================================================
 
 define e = Character("Esmeralda", color="#66CC66")
-define p = Character("Professor", color="#4A90E2")
-define a1 = Character("Aluno", color="#FFB347")
-define a2 = Character("Aluna", color="#FF69B4")
+define p = Character("Prof. Gustavo", color="#4A90E2")
+define a1 = Character("Gabriel", color="#FFB347")
+define a2 = Character("Júlia", color="#FF69B4")
 
 define narrador = Character(None)
 

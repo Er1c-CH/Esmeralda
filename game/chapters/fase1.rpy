@@ -210,6 +210,8 @@ screen skymail_cadastro():
 
                 if mostrar_dicas:
 
+                    $ senha_fraca = True
+
                     null height 5
 
                     frame:

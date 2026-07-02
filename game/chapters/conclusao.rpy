@@ -1,41 +1,78 @@
 init python:
 
-    def calcular_nota(phishing_score):
+    def calcular_boletim():
 
-        # 0 erros = nota máxima
-        if phishing_score == 0:
-            return 10, "Excelente"
+        # -----------------------------
+        # FASE 1 - SENHAS
+        # -----------------------------
 
-        # 1 erro
-        elif phishing_score == 1:
-            return 8.5, "Bom"
-
-        # 2 erros
-        elif phishing_score == 2:
-            return 6.5, "Atenção"
-
-        # 3 erros
+        if senha_fraca:
+            nota_senha = 1.0
         else:
-            return 4.0, "Crítico"
+            nota_senha = 2.0
+
+
+        # -----------------------------
+        # FASE 2 - ENGENHARIA SOCIAL
+        # -----------------------------
+
+        nota_social = max(1.0, 4.0 - vulnerabilidade)
+
+
+        # -----------------------------
+        # FASE 3 - PHISHING
+        # -----------------------------
+
+        nota_phishing = max(1.0, 4.0 - phishing_score)
+
+
+        nota_final = nota_senha + nota_social + nota_phishing
+
+
+        if nota_final >= 9:
+
+            nivel = "Excelente"
+
+        elif nota_final >= 7:
+
+            nivel = "Bom"
+
+        elif nota_final >= 5:
+
+            nivel = "Regular"
+
+        else:
+
+            nivel = "Necessita Reforço"
+
+
+        return (
+            nota_final,
+            nivel,
+            nota_senha,
+            nota_social,
+            nota_phishing
+        )
 
 
 screen boletim_digital():
 
     modal True
 
-    $ nota, nivel = calcular_nota(phishing_score)
+    $ nota, nivel, nota_senha, nota_social, nota_phishing = calcular_boletim()
 
     frame:
 
         xalign 0.5
         yalign 0.5
 
-        xsize 900
-        ysize 600
+        xsize 920
+        ysize 620
 
-        padding (20, 20)
+        padding (20,20)
 
         vbox:
+
             spacing 10
 
             text "📊 Boletim Digital - SkyMail Academy" style "sky_title"
@@ -46,119 +83,215 @@ screen boletim_digital():
                 mousewheel True
                 scrollbars "vertical"
 
-                xsize 860
-                ysize 520
+                xsize 880
+                ysize 540
 
                 vbox:
 
-                    spacing 18
+                    spacing 20
 
                     ##################################################
-                    ## INFO ALUNO
+                    ## CABEÇALHO
                     ##################################################
 
                     frame:
+
                         background "#F5F7FA"
-                        padding (15,15)
 
-                        vbox:
-                            spacing 5
-
-                            text "Aluno: Esmeralda" size 20
-                            text "Avaliação: Segurança Digital" size 18
-                            text "Sistema: Prova Prática SkyMail"
-
-                    ##################################################
-                    ## NOTA
-                    ##################################################
-
-                    frame:
-                        background "#EAF2FF"
                         padding (20,20)
 
                         vbox:
+
+                            spacing 6
+
+                            text "Aluno: Esmeralda" size 22
+
+                            text "Professor: Segurança Digital"
+
+                            text "Avaliação: Prova Prática SkyMail"
+
+                            text "Pontuação Máxima: 10 pontos"
+
+                    ##################################################
+                    ## NOTA FINAL
+                    ##################################################
+
+                    frame:
+
+                        background "#EAF2FF"
+
+                        padding (20,20)
+
+                        vbox:
+
+                            spacing 8
+
+                            text "Nota Final" size 24
+
+                            text "[nota] / 10" size 48 color "#1565C0"
+
+                            text "Classificação: [nivel]" size 20
+
+                    ##################################################
+                    ## COMPETÊNCIAS
+                    ##################################################
+
+                    frame:
+
+                        background "#F7F7F7"
+
+                        padding (20,20)
+
+                        vbox:
+
+                            spacing 12
+
+                            text "Desempenho por Competência" size 22
+
+                            text "🔐 Criação de Senhas ................ [nota_senha] / 2"
+
+                            bar:
+                                value StaticValue(nota_senha)
+                                range 2
+                                xmaximum 650
+
+                            text "🧠 Engenharia Social ............. [nota_social] / 4"
+
+                            bar:
+                                value StaticValue(nota_social)
+                                range 4
+                                xmaximum 650
+
+                            text "📧 Identificação de Phishing ..... [nota_phishing] / 4"
+
+                            bar:
+                                value StaticValue(nota_phishing)
+                                range 4
+                                xmaximum 650
+
+                    ##################################################
+                    ## COMPETÊNCIAS DESENVOLVIDAS
+                    ##################################################
+
+                    frame:
+
+                        background "#FFFFFF"
+
+                        padding (20,20)
+
+                        vbox:
+
+                            spacing 8
+
+                            text "Competências Desenvolvidas" size 22
+
+                            text "✔ Criar senhas fortes"
+
+                            text "✔ Reconhecer tentativas de engenharia social"
+
+                            text "✔ Identificar sinais de phishing"
+
+                            text "✔ Tomar decisões seguras na internet"
+
+                    ##################################################
+                    ## FEEDBACK
+                    ##################################################
+
+                    frame:
+
+                        background "#FFFFFF"
+
+                        padding (20,20)
+
+                        vbox:
+
                             spacing 10
 
-                            text "Nota Final" size 22
-                            text "[nota] / 10" size 42 color "#1565C0"
-                            text "Classificação: [nivel]" size 18
+                            text "Comentários do Professor" size 22
 
-                    ##################################################
-                    ## HABILIDADES
-                    ##################################################
+                            ########################################
 
-                    frame:
-                        background "#F7F7F7"
-                        padding (15,15)
+                            if senha_fraca:
 
-                        vbox:
-                            spacing 8
-
-                            text "Habilidades Avaliadas:" size 18
-
-                            text "🔐 Senhas seguras: OK"
-                            text "🧠 Engenharia social: OK"
-                            text "📧 Phishing: " + ("Excelente" if phishing_score == 0 else "Parcial")
-
-                    ##################################################
-                    ## FEEDBACK DETALHADO
-                    ##################################################
-
-                    frame:
-                        background "#FFFFFF"
-                        padding (15,15)
-
-                        vbox:
-                            spacing 8
-
-                            if phishing_score == 0:
-
-                                text "✔ Excelente percepção de riscos digitais."
-                                text "✔ Identificação precisa de tentativas de phishing."
-                                text "✔ Nenhuma falha crítica detectada."
-
-                            elif phishing_score == 1:
-
-                                text "✔ Bom desempenho geral."
-                                text "⚠ Pequenos erros em análise de mensagens."
-
-                            elif phishing_score == 2:
-
-                                text "⚠ Atenção necessária."
-                                text "⚠ Alguns sinais de phishing não foram percebidos."
+                                text "• Você precisou revisar sua senha antes de atender aos requisitos de segurança."
 
                             else:
 
-                                text "⚠ Risco elevado."
-                                text "⚠ Necessita reforço em segurança digital."
+                                text "• Excelente! Sua senha atendeu aos critérios logo na primeira tentativa."
+
+                            ########################################
+
+                            if vulnerabilidade == 0:
+
+                                text "• Você identificou corretamente todas as tentativas de engenharia social."
+
+                            elif vulnerabilidade == 1:
+
+                                text "• Você caiu em apenas uma tentativa de manipulação."
+
+                            elif vulnerabilidade == 2:
+
+                                text "• Algumas situações de engenharia social ainda geraram dúvidas."
+
+                            else:
+
+                                text "• É importante praticar mais a identificação de tentativas de engenharia social."
+
+                            ########################################
+
+                            if phishing_score == 0:
+
+                                text "• Todos os e-mails foram classificados corretamente."
+
+                            elif phishing_score == 1:
+
+                                text "• Apenas um e-mail foi classificado incorretamente."
+
+                            elif phishing_score == 2:
+
+                                text "• Alguns sinais de phishing passaram despercebidos."
+
+                            else:
+
+                                text "• Recomenda-se revisar os principais indícios de phishing."
 
                     ##################################################
                     ## OBSERVAÇÃO FINAL
                     ##################################################
 
                     frame:
+
                         background "#FFF3E0"
-                        padding (15,15)
+
+                        padding (20,20)
 
                         vbox:
-                            spacing 5
 
-                            text "Observação do Professor:" size 18
+                            spacing 8
 
-                            text "O desempenho reflete sua capacidade de identificar ameaças reais em ambientes digitais."
+                            text "Observação Final" size 22
+
+                            text "Seu desempenho demonstra sua capacidade de aplicar conhecimentos de segurança digital em situações semelhantes às encontradas no uso cotidiano da internet."
+
+                            text "Continue observando cuidadosamente mensagens, pessoas e solicitações antes de compartilhar informações pessoais."
 
                     ##################################################
-                    ## BOTÃO FINAL
+                    ## BOTÃO
                     ##################################################
+
+                    null height 15
 
                     textbutton "Finalizar Avaliação":
 
                         xalign 0.5
 
                         style "sky_button"
+
                         text_style "sky_button_text"
 
                         action Return()
+
+                    null height 20
 
 label avaliacao_professor:
 

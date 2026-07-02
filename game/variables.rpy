@@ -8,3 +8,4 @@ default senha_cadastrada = ""
 default mostrar_dicas = False
 default senha_concluida = False
 
+default senha_fraca = False
