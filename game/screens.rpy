@@ -607,23 +607,95 @@ screen about():
 
     tag menu
 
-    ## Essa instrução de uso inclui a tela game_menu dentro desta. O filho vbox
-    ## é então incluído na janela de visualização dentro da tela game_menu.
-    use game_menu(_("Sobre"), scroll="viewport"):
+    use game_menu(_("Créditos"), scroll="viewport"):
 
         style_prefix "about"
 
         vbox:
 
-            label "[config.name!t]"
-            text _("Versão [config.version!t]\n")
+            spacing 20
 
-            ## gui.about é normalmente definido em options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
+            label "Jornada Digital de Esmeralda"
 
-            text _("Feito com {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only] .\n\n[renpy.license!t]")
+            text "Versão [config.version!t]\n"
 
+            text "Jogo educativo desenvolvido como projeto acadêmico sobre Segurança Digital, abordando os temas de senhas seguras, engenharia social e phishing.\n"
+
+            ###############################################
+            ## Engine
+            ###############################################
+
+            text "{b}Engine{/b}"
+
+            text "Desenvolvido com {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n"
+
+            text "{b}Desenvolvimento{/b}"
+
+            text "Eric Carvalho"
+            text "José Felipe Jesus"
+            text "Sandro Carneiro"
+            text "Yasmim Ramos\n"
+
+            text "{b}Supervisora{/b}"
+            text "Professora Dra. Ariane Nunes Rodrigues\n"
+
+            text "Universidade de Pernambuco - UPE"
+
+            text "Curso de Licenciatura em Computação"
+
+            ###############################################
+            ## Backgrounds
+            ###############################################
+
+            text "{b}Backgrounds{/b}"
+
+            text "Yume Background Pack"
+
+            text "{a=https://noranekogames.itch.io/yumebackground}Noraneko Games{/a}"
+
+            text "Licença: Give credit to \"Noraneko Games\"."
+
+            ###############################################
+            ## Personagens
+            ###############################################
+
+            text "{b}Sprites dos Personagens{/b}"
+
+            text "{a=https://fuelli.itch.io/free-to-use-character-sprites}Fuelli - Free to Use Character Sprites{/a}"
+
+            text "{a=https://fuelli.carrd.co/}https://fuelli.carrd.co/{/a}"
+
+            ###############################################
+            ## Ícones
+            ###############################################
+
+            text "{b}Ícones{/b}"
+
+            text "Lock icons created by Those Icons"
+
+            text "{a=https://www.flaticon.com/free-icons/lock}Flaticon - Lock Icons{/a}"
+
+            text ""
+
+            text "Email icons created by Smashicons"
+
+            text "{a=https://www.flaticon.com/free-icons/email}Flaticon - Email Icons{/a}"
+
+            ###############################################
+            ## Agradecimentos
+            ###############################################
+
+            text "{b}Agradecimentos{/b}"
+
+            text "A todos os autores que disponibilizam recursos gratuitos para desenvolvimento de jogos e aplicações educacionais."
+
+            ###############################################
+            ## Licença Ren'Py
+            ###############################################
+
+            text "{b}Licença do Ren'Py{/b}"
+
+            text "[renpy.license!t]"
 
 style about_label is gui_label
 style about_label_text is gui_label_text
